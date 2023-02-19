@@ -1,9 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0</TargetFrameworks>
+    
+    <PackageId>NeoSystems.TimeUtils</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Armand Jordaan</Authors>
+    <Company>Neo Systems (Pty) Ltd</Company>
+    <ProjectUrl>https://github.com/neosystemsptyltd/NeoSystems.TimeUtils</ProjectUrl>  
+    </PropertyGroup>
 
 </Project>
