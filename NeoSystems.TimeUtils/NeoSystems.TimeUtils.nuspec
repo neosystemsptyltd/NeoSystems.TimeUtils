@@ -5,7 +5,7 @@
         <id>NeoSystems.TimeUtils</id>
 
         <!-- Package version number that is used when resolving dependencies -->
-        <version>1.0.1</version>
+        <version>1.0.2</version>
 
         <!-- Authors contain text that appears directly on the gallery -->
         <authors>Armand Jordaan</authors>
@@ -17,7 +17,7 @@
         <owners>ArmandJordaan</owners>
 
         <!-- Project URL provides a link for the gallery -->
-        <projectUrl>https://github.com/neosystemsptyltd/NeoSystems.TimeUtils</projectUrl>
+        <projectUrl>https://github.com/neosystemsptyltd/NeoSystems.TimeUtils/</projectUrl>
 
         <!-- License information is displayed on the gallery -->
         <license type="expression">MIT</license>
