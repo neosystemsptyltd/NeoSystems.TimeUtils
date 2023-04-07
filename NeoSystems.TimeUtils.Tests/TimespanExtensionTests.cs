@@ -32,7 +32,7 @@ public class Tests
         TimeUnits units = new TimeUnits();
         TimeSpan expected = TimeSpan.FromMilliseconds(31536000000);
 
-        Assert.AreEqual($"365 days", expected.ToHumanReadableExpanded(units));
+        Assert.AreEqual($"1 years", expected.ToHumanReadableExpanded(units));
     }
 
     [Test]
