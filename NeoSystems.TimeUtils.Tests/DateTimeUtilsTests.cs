@@ -78,4 +78,13 @@ public class DateTimeUtilsTests
         Assert.AreEqual(d.AddSeconds(seconds), result);
     }
 
+    // Test null
+    [Test]
+    public void FuzzyAdd_null()
+    {
+        DateTime d = DateTime.Now;
+        DateTime result = d.FuzzyAdd(null);
+        Assert.AreEqual(d, result);
+    }
+
 }

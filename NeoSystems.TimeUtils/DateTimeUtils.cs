@@ -18,6 +18,11 @@ namespace NeoSystems.TimeUtils
         /// <returns>DateTime</returns>
         public static DateTime FuzzyAdd(this DateTime d, string s)
         {
+            if (s == null)
+            {
+                return d;
+            }
+
             TimeUnitEnum unit = TimeUnitEnum.Years;
 
             var temp = s.Trim();
