@@ -11,7 +11,7 @@ public class DateTimeUtilsTests
     public void Setup()
     {
     }
-    
+
     // Test One:
     [Test]
     public void FuzzyAdd_Years_Test()
@@ -85,6 +85,66 @@ public class DateTimeUtilsTests
         DateTime d = DateTime.Now;
         DateTime result = d.FuzzyAdd(null);
         Assert.AreEqual(d, result);
+    }
+
+    // Test 1
+    [Test]
+    public void DateTimeFromUnixTimestampMillis_WithValidInput_ReturnsCorrectDateTime()
+    {
+        // Arrange
+        long millis = 1577836800000; // Unix timestamp for 1 January 2020 12:00:00
+        DateTime expected = new DateTime(2020, 1, 1, 0, 0, 0);
+
+        // Act
+        DateTime result = DateTimeUtils.DateTimeFromUnixTimestampMillis(millis);
+
+        // Assert
+        Assert.AreEqual(expected, result);
+    }
+
+    // Test 2
+    [Test]
+    public void DateTimeFromUnixTimestampMillis_WithZeroInput_ReturnsUnixEpoch()
+    {
+        // Arrange
+        long millis = 0; // Unix Epoch
+        DateTime unixEpoch = DateTimeUtils.UnixEpoch;
+
+        // Act
+        DateTime result = DateTimeUtils.DateTimeFromUnixTimestampMillis(millis);
+
+        // Assert
+        Assert.AreEqual(unixEpoch, result);
+    }
+
+    // Test 1
+    [Test]
+    public void DateTimeFromUnixTimestampSeconds_WithValidInput_ReturnsCorrectDateTime()
+    {
+        // Arrange
+        long millis = 1577836800; // Unix timestamp for 1 January 2020 12:00:00
+        DateTime expected = new DateTime(2020, 1, 1, 0, 0, 0);
+
+        // Act
+        DateTime result = DateTimeUtils.DateTimeFromUnixTimestampSeconds(millis);
+
+        // Assert
+        Assert.AreEqual(expected, result);
+    }
+
+    // Test 2
+    [Test]
+    public void DateTimeFromUnixTimestampSeconds_WithZeroInput_ReturnsUnixEpoch()
+    {
+        // Arrange
+        long millis = 0; // Unix Epoch
+        DateTime unixEpoch = DateTimeUtils.UnixEpoch;
+
+        // Act
+        DateTime result = DateTimeUtils.DateTimeFromUnixTimestampSeconds(millis);
+
+        // Assert
+        Assert.AreEqual(unixEpoch, result);
     }
 
 }

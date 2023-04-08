@@ -7,6 +7,12 @@ namespace NeoSystems.TimeUtils
     public static class DateTimeUtils
     {
         /// <summary>
+        /// Constant: unix time epoch
+        /// </summary>
+        public static readonly DateTime UnixEpoch =
+            new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+        /// <summary>
         /// Create a DateTime from a string
         /// The string can be in the format:
         ///    -5d
@@ -82,6 +88,26 @@ namespace NeoSystems.TimeUtils
                 default:
                     return d;
             }
+        }
+
+        /// <summary>
+        /// Create a DateTime struct from a Unix millisecond timestamp
+        /// </summary>
+        /// <param name="millis">Unix millisecond timestamp</param>
+        /// <returns>DateTime struct</returns>
+        public static DateTime DateTimeFromUnixTimestampMillis(long millis)
+        {
+            return UnixEpoch.AddMilliseconds(millis);
+        }
+
+        /// <summary>
+        /// Create a DateTime struct from a Unix second timestamp
+        /// </summary>
+        /// <param name="seconds">Unix second timestamp</param>
+        /// <returns>DateTime struct</returns>
+        public static DateTime DateTimeFromUnixTimestampSeconds(long seconds)
+        {
+            return UnixEpoch.AddSeconds(seconds);
         }
     }
 }
