@@ -12,7 +12,7 @@ public class ToHumanReadableSimpleTests
     [TestCase(121, "2 minutes")]
     [TestCase(3600, "an hour")]
     [TestCase(7200, "2 hours")]
-    [TestCase(86400, "yesterday")]
+    [TestCase(86400, "a day")]
     [TestCase(172800, "2 days")]
     [TestCase(2592000, "one month")]
     [TestCase(31104000, "one year")]

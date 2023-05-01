@@ -55,7 +55,8 @@ namespace NeoSystems.TimeUtils
 
             if (delta < 172800) // 48 * 60 * 60
             {
-                return "yesterday";
+                return "a day";
+                // return "yesterday";
             }
 
             if (delta < 2592000) // 30 * 24 * 60 * 60
