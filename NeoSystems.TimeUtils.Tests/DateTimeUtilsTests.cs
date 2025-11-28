@@ -147,4 +147,51 @@ public class DateTimeUtilsTests
         Assert.AreEqual(unixEpoch, result);
     }
 
+    [Test]
+    public void FuzzyAdd_Weeks_Test()
+    {
+        DateTime d = DateTime.Now;
+        int weeks = 2;
+        string str = $"{weeks}w";
+        DateTime result = d.FuzzyAdd(str);
+        Assert.AreEqual(d.AddDays(weeks * 7), result);
+    }
+
+    [Test]
+    public void FuzzyAdd_CaseInsensitive_Test()
+    {
+        DateTime d = DateTime.Now;
+        Assert.AreEqual(d.AddYears(1), d.FuzzyAdd("1Y"));
+        Assert.AreEqual(d.AddYears(1), d.FuzzyAdd("1y"));
+        Assert.AreEqual(d.AddDays(7), d.FuzzyAdd("1W"));
+        Assert.AreEqual(d.AddDays(7), d.FuzzyAdd("1w"));
+    }
+
+    [Test]
+    public void FuzzyAdd_NoSuffix_ReturnsOriginalDate()
+    {
+        DateTime d = DateTime.Now;
+        Assert.AreEqual(d, d.FuzzyAdd("10"));
+    }
+
+    [Test]
+    public void FuzzyAdd_InvalidNumber_ReturnsOriginalDate()
+    {
+        DateTime d = DateTime.Now;
+        Assert.AreEqual(d, d.FuzzyAdd("abcY"));
+    }
+
+    [Test]
+    public void FuzzyAdd_EmptyString_ReturnsOriginalDate()
+    {
+        DateTime d = DateTime.Now;
+        Assert.AreEqual(d, d.FuzzyAdd(""));
+    }
+
+    [Test]
+    public void FuzzyAdd_WhitespaceString_ReturnsOriginalDate()
+    {
+        DateTime d = DateTime.Now;
+        Assert.AreEqual(d, d.FuzzyAdd("   "));
+    }
 }
