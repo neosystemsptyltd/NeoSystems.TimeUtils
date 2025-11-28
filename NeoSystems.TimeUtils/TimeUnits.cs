@@ -1,32 +1,26 @@
-
-public class TimeUnits
+namespace NeoSystems.TimeUtils
 {
-    public string milliseconds { get; set; }
-
-    public string seconds { get; set; }
-
-    public string minutes { get; set; }
-
-    public string hours { get; set; }
-
-    public string days { get; set; }
-
-    public string weeks { get; set; }
-
-    public string months { get; set; }
-
-    public string years { get; set; }
-
-    public TimeUnits()
+    public class TimeUnits
     {
-        milliseconds = "milliseconds";
-        seconds = "seconds";
-        minutes = "minutes";
-        hours = "hours";
-        days = "days";
-        weeks = "weeks";
-        months = "months";
-        years = "years";
+        public string Milliseconds { get; set; }
+        public string Seconds { get; set; }
+        public string Minutes { get; set; }
+        public string Hours { get; set; }
+        public string Days { get; set; }
+        public string Weeks { get; set; }
+        public string Months { get; set; }
+        public string Years { get; set; }
+
+        public TimeUnits()
+        {
+            Milliseconds = "milliseconds";
+            Seconds = "seconds";
+            Minutes = "minutes";
+            Hours = "hours";
+            Days = "days";
+            Weeks = "weeks";
+            Months = "months";
+            Years = "years";
+        }
     }
 }
-

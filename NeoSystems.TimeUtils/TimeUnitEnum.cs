@@ -8,6 +8,7 @@ namespace NeoSystems.TimeUtils
     {
         Years,
         Months,
+        Weeks,
         Days,
         Hours,
         Minutes,

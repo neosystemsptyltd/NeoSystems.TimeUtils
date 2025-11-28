@@ -98,40 +98,40 @@ namespace NeoSystems.TimeUtils
             {
                 double years = Math.Floor(ms / (1000.0 * 60 * 60 * 24 * 365));
                 ms -= years * (1000.0 * 60 * 60 * 24 * 365);
-                sb.Append($"{years:0} {tu.years} ");
+                sb.Append($"{years:0} {tu.Years} ");
             }
 
             if (ms >= (1000.0 * 60 * 60 * 24))
             {
                 double days = Math.Floor(ms / (1000.0 * 60 * 60 * 24));
                 ms -= days * (1000.0 * 60 * 60 * 24);
-                sb.Append($"{days:0} {tu.days} ");
+                sb.Append($"{days:0} {tu.Days} ");
             }
 
             if (ms >= (1000.0 * 60 * 60))
             {
                 double hours = Math.Floor(ms / (1000.0 * 60 * 60));
                 ms -= hours * (1000.0 * 60 * 60);
-                sb.Append($"{hours:0} {tu.hours} ");
+                sb.Append($"{hours:0} {tu.Hours} ");
             }
 
             if (ms >= (1000.0 * 60))
             {
                 double minutes = Math.Floor(ms / (1000.0 * 60));
                 ms -= minutes * (1000.0 * 60);
-                sb.Append($"{minutes:0} {tu.minutes} ");
+                sb.Append($"{minutes:0} {tu.Minutes} ");
             }
 
             if (ms >= 1000.0)
             {
                 double seconds = Math.Floor(ms / (1000.0));
                 ms -= seconds * (1000.0);
-                sb.Append($"{seconds:0} {tu.seconds} ");
+                sb.Append($"{seconds:0} {tu.Seconds} ");
             }
 
             if (ms > 0.0)
             {
-                sb.Append($"{ms:0} {tu.milliseconds} ");
+                sb.Append($"{ms:0} {tu.Milliseconds} ");
             }
 
             return sb.ToString().Trim();

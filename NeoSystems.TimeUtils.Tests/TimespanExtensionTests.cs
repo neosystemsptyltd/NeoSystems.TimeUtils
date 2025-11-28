@@ -32,7 +32,7 @@ public class Tests
         TimeUnits units = new TimeUnits();
         TimeSpan expected = TimeSpan.FromMilliseconds(31536000000);
 
-        Assert.AreEqual($"1 years", expected.ToHumanReadableExpanded(units));
+        Assert.AreEqual($"1 {units.Years}", expected.ToHumanReadableExpanded(units));
     }
 
     [Test]
@@ -141,7 +141,7 @@ public class Tests
     [Test]
     public void AddDays_WorksForNegativeValue()
     {
-        // Arrange 
+        // Arrange
         TimeSpan ts = new TimeSpan(3, 4, 5);
 
         // Act
@@ -156,7 +156,7 @@ public class Tests
     [Test]
     public void AddDays_WorksForPositiveValue()
     {
-        // Arrange 
+        // Arrange
         TimeSpan ts = new TimeSpan(3, 4, 5);
 
         // Act
@@ -178,10 +178,11 @@ public class Tests
     }
 
     // Test 2
+    [Test]
     public void TimespanAddWeeks_PositiveWeeks_ReturnsExpectedValue()
     {
         TimeSpan given = TimeSpan.FromMinutes(30);
-        TimeSpan expected = TimeSpan.FromDays(21);
+        TimeSpan expected = given.Add(TimeSpan.FromDays(21));
         Assert.AreEqual(expected, given.AddWeeks(3));
     }
 
@@ -231,16 +232,16 @@ public class Tests
     [Test]
     public void ToHumanReadableExpanded_TenthOfSecond_ReturnsTenthOfSecond()
     {
-        // Arrange 
+        // Arrange
         TimeSpan ts = TimeSpan.FromMilliseconds(100);
         TimeUnits tu = new TimeUnits()
         {
-            milliseconds = "milliseconds",
-            seconds = "seconds",
-            minutes = "minutes",
-            hours = "hours",
-            days = "days",
-            years = "years"
+            Milliseconds = "milliseconds",
+            Seconds = "seconds",
+            Minutes = "minutes",
+            Hours = "hours",
+            Days = "days",
+            Years = "years"
         };
 
         // Act
@@ -254,16 +255,16 @@ public class Tests
     [Test]
     public void ToHumanReadableExpanded_OneSecond_ReturnsOneSecond()
     {
-        // Arrange 
+        // Arrange
         TimeSpan ts = TimeSpan.FromSeconds(1);
         TimeUnits tu = new TimeUnits()
         {
-            milliseconds = "milliseconds",
-            seconds = "seconds",
-            minutes = "minutes",
-            hours = "hours",
-            days = "days",
-            years = "years"
+            Milliseconds = "milliseconds",
+            Seconds = "seconds",
+            Minutes = "minutes",
+            Hours = "hours",
+            Days = "days",
+            Years = "years"
         };
 
         // Act
@@ -274,5 +275,3 @@ public class Tests
     }
 
 }
-
-
